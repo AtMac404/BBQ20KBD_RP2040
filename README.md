@@ -34,6 +34,4 @@
 
 ## 将本仓库代码放入指定目录：
 将 bbq20 文件夹放置在 qmk_firmware/keyboards/ 目录下# BBQ20KBD_RP2040
-# BBQ20KBD_RP2040
-# BBQ20KBD_RP2040
-# BBQ20KBD_RP2040
+
