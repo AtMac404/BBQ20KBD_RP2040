@@ -29,6 +29,7 @@ To better suit daily PC use, the physical buttons at the bottom of the screen ha
 1. **Prepare the environment and switch to version 0.22.0:**
 
 ``bash
+
    cd qmk_firmware
    git fetch [https://github.com/qmk/qmk_firmware.git](https://github.com/qmk/qmk_firmware.git) --tags
    git checkout 0.22.0
