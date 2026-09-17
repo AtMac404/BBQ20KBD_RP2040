@@ -1,37 +1,39 @@
 # BBQ20-RP2040 Custom QMK Firmware
 
-本项目是基于 Raspberry Pi RP2040 主控的 BlackBerry BBQ20 键盘客制化 QMK 固件。
-项目包含bom，原理图，以编译的固件和源代码
+This project is a custom QMK firmware for the BlackBerry BBQ20 keyboard, based on the Raspberry Pi RP2040 controller.
+The project includes a BOM, schematics, compiled firmware, and source code.
 
-完美解决了原版代码在新版 QMK 环境下无法编译、背光昏暗、触摸板方向错乱等历史遗留问题，并针对日常使用习惯优化了顶排按键。
+It perfectly resolves legacy issues such as the original code failing to compile in the new QMK environment, dim backlighting, and incorrect touchpad orientation, and optimizes the top row of buttons for everyday use.
 
-## 📍 引脚定义 (Pinout Configuration)
+## 📍 Pin definition (Pinout Configuration)
+The matrix mapping for this firmware is as follows (for a custom RP2040 driver board):
 
-本固件的矩阵映射如下（针对自定义 RP2040 驱动板）：
 - **Rows (8)**: `GP1`, `GP2`, `GP3`, `GP4`, `GP5`, `GP6`, `GP7`, `GP20`
 - **Cols (8)**: `GP8`, `GP9`, `GP14`, `GP13`, `GP12`, `GP11`, `GP10`, `GP19`
 - **Backlight**: `GP25`
 
-## ⌨️ 顶部按键说明 (Top Row Keymap)
+## ⌨️ Top button description (Top Row Keymap)
 
-为了适配 PC 日常操作，屏幕下方的实体按键功能已从左到右重映射为：
-- `拨号键` (绿色) -> **Tab 键**
-- `黑莓 Logo` -> **Win 键 / GUI**
-- `触摸板按下` -> **鼠标左键**
-- `返回键` -> **鼠标右键**
-- `挂断键` (红色) -> **Esc 键**
+To better suit daily PC use, the physical buttons at the bottom of the screen have been remapped from left to right as follows:
 
-## 🚀 编译与刷写指南 (Build Instructions)
+- Dialer key (green) -> Tab key
+- BlackBerry logo -> Win key / GUI key
+- Touchpad pressed -> Left mouse button
+- Back key -> Right mouse button
+- Hang up key (red) -> Esc key
 
-**⚠️ 极其重要：** 必须使用 QMK `0.22.0` 版本进行编译，以避免最新版本底层的架构变动冲突。
+## 🚀 Compilation and Flashing Guide (Build Instructions)
 
-1. **准备环境并切换到 0.22.0 版本**：
-   ```bash
+**⚠️ Extremely Important:** You must use QMK version `0.22.0` to compile in order to avoid conflicts caused by underlying architecture changes in the latest version.
+
+1. **Prepare the environment and switch to version 0.22.0:**
+
+``bash
    cd qmk_firmware
    git fetch [https://github.com/qmk/qmk_firmware.git](https://github.com/qmk/qmk_firmware.git) --tags
    git checkout 0.22.0
    make git-submodule
 
-## 将本仓库代码放入指定目录：
-将 bbq20 文件夹放置在 qmk_firmware/keyboards/ 目录下# BBQ20KBD_RP2040
+## Place the code from this repository in the specified directory:
+Place the bbq20 folder in the qmk_firmware/keyboards/ directory # BBQ20KBD_RP2040
 
